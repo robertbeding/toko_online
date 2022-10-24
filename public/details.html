@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Store - Your Best Marketplace</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="style/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style/button.css">
+  </head>
+
+  <body>
+    <!-- data aos digunakan untuk transisi -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light navbar-store fixed-top navbar-fixed-top"
+      data-aos="fade-down"
+    >
+      <div class="container">
+        <a href="/index.html" class="navbar-brand">
+          <img src="/images/logo.svg" alt="" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html"
+                >Home <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/categories.html">Categories</a>
+            </li>
+
+            <li class="nav-item">
+              <a href="/" class="nav-link">Rewards</a>
+            </li>
+          </ul>
+          <!-- Dekstop menu -->
+
+          <!-- d-none agar tidak muncul pada tampilan mobile -->
+          <ul class="navbar-nav d-none d-lg-flex">
+            <li class="nav-item dropdown">
+              <a
+                href=""
+                id="navbarDropdown"
+                role="button"
+                data-toggle="dropdown"
+                class="nav-link"
+              >
+                <img
+                  src="/images/icon-user.png"
+                  alt=""
+                  class="rounded-circle mr-2 profile -picture"
+                />
+                Hi, Robert Beding
+              </a>
+              <div class="dropdown-menu">
+                <a href="/dashboard.html" class="dropdown-item">Dashboard</a>
+                <a href="/dashboard-account.html" class="dropdown-item"
+                  >Settings</a
+                >
+                <div class="dropdown-divider"></div>
+                <a href="/" class="dropdown-item">Logout</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="/" class="nav-link d-inline-block mt-2">
+                <img src="/images/icon-cart-empty.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+
+          <!-- Mobile menu -->
+          <!-- untuk dimobile dimunculin, tapi dilayar gede tidak di munculin -->
+          <ul class="navbar-nav d-block d-lg-none">
+            <li class="nav-item">
+              <a href="" class="nav-link"> Hi, Robert Beding </a>
+            </li>
+            <li class="nav-item d-inline-block">cart</li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-content page-details">
+      <section
+        class="store-breadcrumbs"
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <nav>
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                    <a href="/index.html">Beranda</a>
+                  </li>
+                  <li class="breadcrumb-item active">Detail Produk</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="store-gallery" id="gallery">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8" data-aos="zoom-in">
+              <transition name="slide-fade" mode="out-in">
+                <img
+                  :src="photos[activePhoto].url"
+                  :key="photos[activePhoto].id"
+                  class="w-100 main-image"
+                  alt=""
+                />
+              </transition>
+            </div>
+            <div class="col-lg-2">
+              <div class="row">
+                <div
+                  class="col-3 col-lg-12 mt-2 mt-lg-0"
+                  v-for="(photo,index) in photos"
+                  :key="photo.id"
+                  data-aos="zoom-in"
+                  data-aos-delay="100"
+                >
+                  <!-- object yang ada di photos di pecah menjadi variabel photo, dan menampilkan index -->
+                  <a href="#" @click="changeActive(index)">
+                    <img
+                      :src="photo.url"
+                      class="w-100 thumbnail-image"
+                      :class="{ active:index == activePhoto}"
+                      alt=""
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="store-details-container" data-aos="fade-up">
+        <section class="store-heading">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8">
+                <h1>Sofa Rusak</h1>
+                <div class="owner">By Cipta The</div>
+                <div class="price">Rp.1.500.000</div>
+              </div>
+              <div class="col-lg-2" data-aos="zoom-in">
+                <a
+                  href="/cart.html"
+                  class="btn btn-success px-4 text-white btn-block mb-3"
+                  >add To Cart</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="store-description">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-8">
+                <p>
+                  The Nike Air Max 720 SE goes bigger than ever before with
+                  Nike's tallest Air unit yet for unimaginable, all-day comfort.
+                  There's super breathable fabrics on the upper, while colours
+                  add a modern edge.
+                </p>
+                <p>
+                  Bring the past into the future with the Nike Air Max 2090, a
+                  bold look inspired by the DNA of the iconic Air Max 90.
+                  Brand-new Nike Air cushioning underfoot adds unparalleled
+                  comfort while transparent mesh and vibrantly coloured details
+                  on the upper are blended with timeless OG features for an
+                  edgy, modernised look.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="store-review">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-8 mt-3 mb-3">
+                <h5>Customer Review</h5>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-lg-8">
+                <ul class="list-unstyled">
+                  <li class="media">
+                    <img
+                      src="/images/icons-testimonial-1.png"
+                      class="mr-3 rounded-circle"
+                      alt=""
+                    />
+                    <div class="media-body">
+                      <h5 class="mt-2 mb-1">Cipta The</h5>
+                      Sofanya Jelek gak sesuai ekspetasi,pengiriman lambat
+                      pas di duduk gak empuk
+                    </div>
+                  </li>
+                  <li class="media">
+                    <img
+                      src="/images/icons-testimonial-2.png"
+                      class="mr-3 rounded-circle"
+                      alt=""
+                    />
+                    <div class="media-body">
+                      <h5 class="mt-2 mb-1">Vendy Jemparu</h5>
+                      Sofa nya nyaman di rumah saya taruh di halaman rumah
+                      cocok buat anjing duduk
+                    </div>
+                  </li>
+                  <li class="media">
+                    <img
+                      src="/images/icons-testimonial-3.png"
+                      class="mr-3 rounded-circle"
+                      alt=""
+                    />
+                    <div class="media-body">
+                      <h5 class="mt-2 mb-1">Andrea Aipasa</h5>
+                      Soffa ternyaman yang pernah saya punya harga murah cocok
+                      untuk tempat tidur anjing dan kucing saya
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="conta">
+          <div class="roww">
+                <div class="coll" id="company">
+                    <img src="images/logo.svg" alt="" class="logo">
+                    <p>
+                      Kami Adalah Spesialis sablon dengan bahan terbaik dari kami. kepercayaan kami ada di tangan kalian 
+                    </p>
+                    <div class="social">
+                      <a href="#"><i class="fab fa-facebook"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-youtube"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+
+                <div class="coll" id="services">
+                   <h3>Services</h3>
+                   <div class="links">
+                      <a href="#">Illustration</a>
+                      <a href="#">Sablon</a>
+                      <a href="#">Poster Design</a>
+                      <a href="#">Card Design</a>
+                   </div>
+                </div>
+
+                <div class="coll" id="useful-links">
+                   <h3>Links</h3>
+                   <div class="links">
+                      <a href="#">About</a>
+                      <a href="#">Services</a>
+                      <a href="#">Our Policy</a>
+                      <a href="#">Help</a>
+                   </div>
+                </div>
+
+                <div class="coll" id="contact">
+                    <h3>Contact</h3>
+                    <div class="contact-details">
+                       <i class="fa fa-location"></i>
+                       <p>Jl Dr Wahidin<br>Kalimantan Barat Indonesia</p>
+                    </div>
+                    <div class="contact-details">
+                       <i class="fa fa-phone"></i>
+                       <p>+6289671702405</p>
+                    </div>
+                </div>
+          </div>
+
+          <div class="container">
+            <div class="row">
+              <div class="col-12 text-center">
+                <p>Copyright @robertbeding 2022</p>
+              </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/vendor/jquery/jquery.slim.min.js"></script>
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="/vendor/vue/vue.js"></script>
+    <script>
+      let gallery = new Vue({
+        el: "#gallery", // element yang ditargetkan adalah gallery(semua yang di oleh vue js)
+        mounted() {
+          //mounted ini adalah script yang akan dijalankan saat vue jsnya muncul
+          AOS.init();
+        },
+        data: {
+          activePhoto: 0,
+          photos: [
+            {
+              id: 1,
+              url: "/images/product-details-1.jpg",
+            },
+            {
+              id: 2,
+              url: "/images/product-details-2.jpg",
+            },
+            {
+              id: 3,
+              url: "/images/product-details-3.jpg",
+            },
+            {
+              id: 4,
+              url: "/images/product-details-4.jpg",
+            },
+          ],
+        },
+        methods: {
+          //menyimpan fungsi2 vue js, (yang akan dijalankan vue)
+          changeActive(id) {
+            this.activePhoto = id;
+          },
+        },
+      });
+    </script>
+    <script src="/script/navbar-scroll.js"></script>
+  </body>
+</html>

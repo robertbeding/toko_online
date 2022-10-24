@@ -1,0 +1,40 @@
+.navbar-store {
+    padding-top: 15px;
+  
+    //media-breakpoint-down adalah media query bawaan bootstrap
+    @include media-breakpoint-down(md) {
+      background-color: #fff !important; //important supaya styling ini tidak ketimpa dgn styling yang lain
+    }
+  
+    .nav-item {
+      .nav-link {
+        //media-breakpoint-up untuk layar yng ukurannya untuk layar yg gede aja menambah lebar margin
+        @include media-breakpoint-up(lg) {
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+    }
+  
+    .foto-profil {
+      max-height: 45px;
+    }
+  
+    .card-badge {
+      display: inline-block; // menjadi blok
+      min-width: 2em;
+      padding: 0.3em;
+      border-radius: 50%;
+      font-size: 10px;
+      text-align: center;
+      background: #29a867;
+      color: #fefefe;
+      margin-left: -10px;
+    }
+  }
+  //kayak ada bayangan pada navbar saat di scroll
+  .navbar-fixed-top.scrolled {
+    background-color: #fff !important;
+    transition: background-color 200ms linear;
+  }
+  
