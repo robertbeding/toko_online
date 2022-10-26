@@ -28,8 +28,8 @@
     @include('includes.footer')
 
     {{-- BootstrapcoreJavaScript --}}
-    @method('prepend-script')
+    @stack('prepend-script')
     @include('includes.script')
-    @method('addon-script')
+    @stack('addon-script')
   </body>
 </html>
