@@ -72,6 +72,11 @@ class RegisterController extends Controller
         ]);
     }
 
+    public function daftar()
+    {
+        return view('auth.register');
+    }
+
     public function sukses()
     {
         return view('auth.success');

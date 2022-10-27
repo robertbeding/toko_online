@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CartController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,7 @@ Route::get('/success', [CartController::class, 'success'])->name('succees');
 
 Route::get('/register/success', [RegisterController::class, 'sukses'])->name('register-success');
 
-// Auth::routes();
+Auth::routes();
 
 
 
