@@ -83,7 +83,7 @@
               >
                 Sign Up Now
               </a>
-              <a href="/login.html" class="btn btn-signup btn-block mt-4">
+              <a href="{{ route('login') }}" class="btn btn-signup btn-block mt-4">
                 Back to Sign In
               </a>
             </form>
