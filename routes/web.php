@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -31,6 +32,7 @@ Route::get('/register/success', [RegisterController::class, 'sukses'])->name('re
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/dashboard/product', [ProductController::class, 'index'])->name('dashboard-product');
+Route::get('/dashboard/transaction', [TransactionController::class, 'index'])->name('dashboard-transaction');
 
 Auth::routes();
 

@@ -26,10 +26,10 @@
                     <img src="/images/dashboard-store-logo.svg" alt="" class="my-4" />
                 </div>
                 <div class="list-group list-group-flush">
-                    <a href="/dashboard.html" class="list-group-item list-group-item-action active">
+                    <a href="{{ route('dashboard') }}" class="list-group-item list-group-item-action active">
                         Dashboard
                     </a>
-                    <a href="/dashboard-products.html" class="list-group-item list-group-item-action">
+                    <a href="{{ route('dashboard-product') }}" class="list-group-item list-group-item-action">
                         My Products
                     </a>
                     <a href="/dashboard-transactions.html" class="list-group-item list-group-item-action">
