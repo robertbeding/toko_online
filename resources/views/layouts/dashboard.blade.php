@@ -32,10 +32,10 @@
                     <a href="{{ route('dashboard-product') }}" class="list-group-item list-group-item-action">
                         My Products
                     </a>
-                    <a href="/dashboard-transactions.html" class="list-group-item list-group-item-action">
+                    <a href="{{ route('dashboard-transaction') }}" class="list-group-item list-group-item-action">
                         Transaction
                     </a>
-                    <a href="/dashboard-settings.html" class="list-group-item list-group-item-action">
+                    <a href="{{ route('dashboard-setting') }}" class="list-group-item list-group-item-action">
                         Store Settings
                     </a>
                     <a href="/dashboard-account.html" class="list-group-item list-group-item-action">
