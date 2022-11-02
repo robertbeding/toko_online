@@ -38,7 +38,7 @@
                     <a href="{{ route('dashboard-setting') }}" class="list-group-item list-group-item-action">
                         Store Settings
                     </a>
-                    <a href="/dashboard-account.html" class="list-group-item list-group-item-action">
+                    <a href="{{ route('dashboard-account') }}" class="list-group-item list-group-item-action">
                         My Account
                     </a>
                     <a href="/index.html" class="list-group-item list-group-item-action">

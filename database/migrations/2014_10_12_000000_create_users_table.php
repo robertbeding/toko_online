@@ -19,6 +19,18 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            $table->longText('addres_one');
+            $table->longText('addres_two');
+            $table->integer('provinces_id');
+            $table->integer('regencies_id');
+            $table->integer('zip_code');
+            $table->string('country');
+            $table->string('phone_number');
+            $table->string('store_name');
+            $table->integer('categories_id');
+            
+            $table->softDeletes();
             $table->rememberToken();
             $table->timestamps();
         });
